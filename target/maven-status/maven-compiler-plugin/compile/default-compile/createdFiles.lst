@@ -1,0 +1,4 @@
+com\raspberrymusic\utility\Configuration.class
+com\raspberrymusic\rest\CommandController.class
+com\raspberrymusic\utility\SongUtil.class
+com\raspberrymusic\model\Song.class
