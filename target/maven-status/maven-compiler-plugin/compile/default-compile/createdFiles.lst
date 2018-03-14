@@ -1,9 +1,0 @@
-com\raspberrymusic\utility\Configuration.class
-com\raspberrymusic\configuration\AppConfiguration.class
-com\raspberrymusic\utility\SongUtil.class
-com\raspberrymusic\rest\ApplicationController.class
-com\raspberrymusic\rest\SongController.class
-com\raspberrymusic\model\Song.class
-com\raspberrymusic\controller\CoreController.class
-com\raspberrymusic\rest\PlaylistController.class
-com\raspberrymusic\configuration\AppInitializer.class
