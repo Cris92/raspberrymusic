@@ -42,4 +42,5 @@ public class Configuration {
 	public static String getProp(String key, String defaultValue) {
 		return _config.getProperty(key, defaultValue);
 	}
+	
 }

@@ -1,4 +1,9 @@
 C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\model\Song.java
-C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\rest\CommandController.java
 C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\utility\Configuration.java
 C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\utility\SongUtil.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\configuration\AppInitializer.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\rest\ApplicationController.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\configuration\AppConfiguration.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\rest\PlaylistController.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\rest\SongController.java
+C:\Users\Caiaz\musicApp\webRest\src\main\java\com\raspberrymusic\controller\CoreController.java
