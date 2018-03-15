@@ -42,8 +42,10 @@ public class SongController {
 			String line;
 			List<Song> returnList = new ArrayList<Song>();
 			logger.debug("Output:");
+			int position = 0;
 			while ((line = br.readLine()) != null) {
-				Song s = ConvertUtil.convertOutputSongLineToString(line);
+				position++;
+				Song s = ConvertUtil.convertOutputSongLineToString(line, position);
 				logger.debug(s);
 				returnList.add(s);
 			}
