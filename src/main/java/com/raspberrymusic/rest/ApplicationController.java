@@ -1,6 +1,8 @@
 package com.raspberrymusic.rest;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.raspberrymusic.constants.Commands;
 import com.raspberrymusic.controller.CoreController;
-import com.raspberrymusic.utility.Configuration;
+import com.raspberrymusic.model.Status;
+import com.raspberrymusic.utility.ConvertUtil;
 
 @RestController
 @RequestMapping(value = "/application")
@@ -29,9 +32,10 @@ public class ApplicationController {
 
 	@RequestMapping(value = "/getStatus")
 	private ResponseEntity<String> getStatus() throws IOException, InterruptedException {
-		coreController.executeCommand(Commands.UPDATE_ALL);
-		coreController.executeCommand(Commands.RESTART_MPD);
-		// Return the status of the mpc after transform it in object
+		Process pr = coreController.executeCommand(Commands.STATUS);
+		BufferedReader br = new BufferedReader(new InputStreamReader(pr.getInputStream()));
+		String line = br.readLine();
+		Status s = ConvertUtil.convertOutputStatusLineToString(line);
 		return new ResponseEntity<String>(HttpStatus.OK);
 
 	}
