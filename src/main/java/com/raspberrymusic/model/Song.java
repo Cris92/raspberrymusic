@@ -47,4 +47,10 @@ public class Song {
 	public void setPosition(int position) {
 		this.position = position;
 	}
+
+	@Override
+	public String toString() {
+		return "Song [title=" + title + "\n genre=" + genre + "\n year=" + year + "\n duration=" + duration
+				+ "\n position=" + position + "]";
+	}
 }

@@ -13,5 +13,6 @@ public interface Commands {
 	public static final String ADD_ALL_TO_PLAYLIST = "mpc ls | mpc add";
 	public static final String CLEAR_PLAYLIST = "mpc clear";
 	public static final String STATUS = "mpc ";
+	public static final String ADD = "mpc add ";
 
 }

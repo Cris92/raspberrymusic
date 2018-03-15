@@ -5,10 +5,14 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import org.apache.log4j.Logger;
+
 public class Configuration {
 
 	private static Properties _config;
 	public static final String DOMAIN_HOME = System.getenv("raspberrymusic");
+	private static Logger logger = Logger.getLogger(Configuration.class);
+
 	private Configuration() {
 		init();
 	}
@@ -18,7 +22,9 @@ public class Configuration {
 		InputStream input = null;
 
 		try {
-            String filePath=System.getProperty("raspberrymusic.config.file", DOMAIN_HOME + "/config/application.properties");
+			String filePath = System.getProperty("raspberrymusic.config.file",
+					DOMAIN_HOME + "/config/application.properties");
+			logger.debug("Configuration filepath:" + filePath);
 			input = new FileInputStream(filePath);
 			prop.load(input);
 			_config = prop;
@@ -42,5 +48,5 @@ public class Configuration {
 	public static String getProp(String key, String defaultValue) {
 		return _config.getProperty(key, defaultValue);
 	}
-	
+
 }
