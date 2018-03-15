@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.raspberrymusic.constants.Commands;
 import com.raspberrymusic.controller.CoreController;
 import com.raspberrymusic.utility.Configuration;
 
@@ -20,10 +21,17 @@ public class ApplicationController {
 
 	@RequestMapping(value = "/addNewMusic")
 	private ResponseEntity<String> addNewMusic() throws IOException, InterruptedException {
-		String downloadPath = Configuration.getInstance()
-				.getProperty("raspberrymusic.application.property.download.folder", "C://downloadedMusic");
-		coreController.executeCommand("add " + downloadPath);
-		coreController.executeCommand("systemctl restart mpd");
+		coreController.executeCommand(Commands.UPDATE_ALL);
+		coreController.executeCommand(Commands.RESTART_MPD);
+		return new ResponseEntity<String>(HttpStatus.OK);
+
+	}
+
+	@RequestMapping(value = "/getStatus")
+	private ResponseEntity<String> getStatus() throws IOException, InterruptedException {
+		coreController.executeCommand(Commands.UPDATE_ALL);
+		coreController.executeCommand(Commands.RESTART_MPD);
+		// Return the status of the mpc after transform it in object
 		return new ResponseEntity<String>(HttpStatus.OK);
 
 	}
